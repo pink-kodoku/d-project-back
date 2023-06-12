@@ -30,6 +30,10 @@ export class QuestionService {
     return await paginate<Question>(this.questionRepository, options);
   }
 
+  async findEverything() {
+    return await this.questionRepository.find();
+  }
+
   async findOne(id: number) {
     const question = await this.questionRepository.findOneBy({id});
     if (!question) {

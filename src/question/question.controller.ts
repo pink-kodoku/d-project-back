@@ -43,6 +43,11 @@ export class QuestionController {
     });
   }
 
+  @Get('/everything')
+  async findEverything() {
+    return await this.questionService.findEverything();
+  }
+
   @Get(':id')
   async findOne(@Param('id') id: string) {
     return await this.questionService.findOne(+id);
